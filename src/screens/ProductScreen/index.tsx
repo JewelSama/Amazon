@@ -7,6 +7,7 @@ import QuantitySelector from '../../components/QuantitySelector'
 
 const ProductScreen = () => {
     const [selectedOption, setSelectedOption] = useState(product.options ? product.options[0] : null);
+    const [quantity, setQuantity] = useState(1);
     // console.warn(selectedOption);
     return (
     <View>
@@ -32,7 +33,7 @@ const ProductScreen = () => {
 
         <Text style={styles.description}>{product.description}</Text>
 
-        <QuantitySelector />
+        <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
 
     </View>
