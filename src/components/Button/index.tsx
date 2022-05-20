@@ -4,12 +4,13 @@ import React from 'react'
 interface ButtonProps {
     text: string;
     onPress: () => void;
+    containerStyles?: object;
 }
 
-const Button = ({text, onPress}: ButtonProps) => {
+const Button = ({text, onPress, containerStyles}: ButtonProps) => {
   return (
-    <Pressable onPress={onPress} style={styles.root}>
-      <Text style={styles.text}>Button</Text>
+    <Pressable onPress={onPress} style={[styles.root, containerStyles]}>
+      <Text style={styles.text}>{text}</Text>
     </Pressable>
   )
 }
@@ -19,7 +20,7 @@ export default Button;
 const styles=StyleSheet.create({
     root:{
         backgroundColor: '#e47911', 
-        margin: 10,
+        marginVertical: 10,
         height: 40,
         justifyContent:  'center',
         alignItems: 'center', 

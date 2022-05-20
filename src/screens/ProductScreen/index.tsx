@@ -5,15 +5,18 @@ import product from '../../data/product'
 import { Picker } from '@react-native-picker/picker';
 import QuantitySelector from '../../components/QuantitySelector'
 import Button from '../../components/Button';
+import ImageCarousel from '../../components/ImageCarousel';
 
 const ProductScreen = () => {
     const [selectedOption, setSelectedOption] = useState(product.options ? product.options[0] : null);
     const [quantity, setQuantity] = useState(1);
     // console.warn(selectedOption);
     return (
-    <View>
+    <View style={styles.root}>
       <Text style={styles.title}>{product.title}</Text>
  
+
+        <ImageCarousel images={product.images} />
 
         {/* option <Selector></Selector> */}
 
@@ -37,8 +40,11 @@ const ProductScreen = () => {
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
 
-         <Button text={"Add To Cart"} onPress={() => {console.warn("Add to cart")}} />       
-         <Button text={"Buy Now"} onPress={() => {}} />       
+         <Button text={"Add To Cart"} 
+         onPress={() => {console.warn("Add to cart")}} 
+                containerStyles={{backgroundColor: "#e3c905"}}
+         />       
+         <Button text="Buy Now" onPress={() => {}} />       
 
     </View>
   )
