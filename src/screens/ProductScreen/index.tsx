@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import styles from './styles';
 import product from '../../data/product'
@@ -12,7 +12,7 @@ const ProductScreen = () => {
     const [quantity, setQuantity] = useState(1);
     // console.warn(selectedOption);
     return (
-    <View style={styles.root}>
+    <ScrollView style={[styles.root, {height: '100%'}]}>
       <Text style={styles.title}>{product.title}</Text>
  
 
@@ -46,7 +46,7 @@ const ProductScreen = () => {
          />       
          <Button text="Buy Now" onPress={() => {}} />       
 
-    </View>
+    </ScrollView>
   )
 }
 
