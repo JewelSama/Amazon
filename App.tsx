@@ -7,13 +7,12 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View,} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './src/screens/AddressScreen';
-
+import Router from './src/router'
 
 
 
@@ -28,12 +27,13 @@ const App = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <HomeScreen />
+        <Router />
     </SafeAreaView>
   );
 };

@@ -1,4 +1,5 @@
 package com.myap55p;
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 
@@ -11,5 +12,9 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "MyAp55p";
+  }
+  @Override
+  protected void onCreate(Bundle savedInstructions) {
+    super.onCreate(null);
   }
 }
