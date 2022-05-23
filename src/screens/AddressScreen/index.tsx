@@ -5,9 +5,7 @@ import styles from './styles'
 import countryList from 'country-list'
 import Button from '../../components/Button'
 
-
 const countries = countryList.getData();
-
 
 const AddressScreen = () => {
     const [country, setCountry] = useState(countries[0].code);
@@ -18,6 +16,8 @@ const AddressScreen = () => {
     const [addressErr, setAddressErr]= useState('')
    
    
+
+
     const onCheckout = () =>{
         if(addressErr){
             Alert.alert('Fix all fields errors before submitting');
