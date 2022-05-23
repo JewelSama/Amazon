@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Alert } from 'react-native'
+import { View, Text, TextInput, Alert, ScrollView, KeyboardAvoidingView } from 'react-native'
 import React, {useState} from 'react'
 import {Picker} from '@react-native-picker/picker'
 import styles from './styles'
@@ -29,7 +29,7 @@ const AddressScreen = () => {
         }
         if(!phone){
             Alert.alert('Please fill in the number field')
-            return;
+            return;     
         }
         console.warn('Checkout')
    }
@@ -46,7 +46,8 @@ const AddressScreen = () => {
    
    
     return (
-    <View style={styles.root}>
+        <KeyboardAvoidingView>
+    <ScrollView style={styles.root}>
         <View style={styles.row}>
             <Picker
             selectedValue={country}
@@ -108,7 +109,8 @@ const AddressScreen = () => {
             </View>
 
             <Button text="Checkout" onPress={onCheckout} />
-    </View>
+    </ScrollView>
+    </KeyboardAvoidingView>
   )
 }
 
