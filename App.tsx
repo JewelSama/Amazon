@@ -12,7 +12,7 @@ import React from 'react';
 import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View,} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './src/screens/ShoppingCartScreen';
+import HomeScreen from './src/screens/AddressScreen';
 
 
 
