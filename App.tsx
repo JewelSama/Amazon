@@ -12,8 +12,13 @@ import React from 'react';
 import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View,} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import Router from './src/router'
+import Router from './src/router';
 
+import { Amplify } from 'aws-amplify';
+import {withAuthenticator} from 'aws-amplify-react-native'
+
+import awsconfig from './src/aws-exports';
+Amplify.configure(awsconfig);
 
 
         // style={[
@@ -40,4 +45,4 @@ const App = () => {
 
 
 
-export default App;
+export default withAuthenticator(App);
