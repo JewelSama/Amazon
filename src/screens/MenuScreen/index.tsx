@@ -13,6 +13,7 @@ const MenuScreen = () =>{
     return(
         <SafeAreaView>
             <Button text="Sign Out" onPress={onLogOut}  />
+            
 
         </SafeAreaView>
     )
